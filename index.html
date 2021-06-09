@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue js</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<style>
+    .mobile{
+        margin:30px 25px;
+        padding:10px;
+        border-radius: 10px;
+        background: rgb(241, 241, 241);
+        max-width:70%;
+        font-family:Verdana, Geneva, Tahoma, sans-serif
+    }
+    button{
+        margin-top: 10px;
+        margin-left: 400px;
+        padding: 10px;
+        border-radius: 7px;
+        font-weight: bolder;
+        font-size:1em;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    div.favr{
+        background:rgb(117, 250, 117);
+    }
+</style>
+<body>
+    <div id="app">
+        <div  v-if="showMobile">
+            <div @click="changeFav(mobile)" class="mobile" v-for="mobile in mobiles" :class="{favr:mobile.isFav}">
+                <h2>{{mobile.brand}}</h2>
+                <P>Price: {{mobile.price}}</P>
+            </div>
+        </div>
+        <button @click="toggleMobile">
+            <span v-if="showMobile">Show Mobile</span>
+            <span v-else>Hide Mobile</span>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
